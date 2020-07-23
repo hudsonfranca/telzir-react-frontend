@@ -1,9 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { useIntersection } from 'react-use';
 
 import { Parallax } from 'react-parallax';
 
+import { Formik, FormikHelpers } from 'formik';
+import * as Yup from 'yup';
 import {
   Container,
   SectionOne,
@@ -14,12 +16,66 @@ import {
   CardTitle,
   CardBody,
   SectionThree,
+  Label,
+  Form,
+  Input,
+  Text,
+  Select,
+  InputTitle,
+  ButtonSubmit,
+  MoneyText,
 } from './styles';
 import Image1 from '../../assets/home.jpg';
-import iphone1 from '../../assets/iphone1.jpg';
+import phone from '../../assets/phone.jpg';
+import phone2 from '../../assets/phone2.jpg';
+import api from '../../services/api';
+
+const validate = Yup.object().shape({
+  minutes: Yup.number().required('Por favor forneça os minutos '),
+  planId: Yup.number().required('Por favor selecione um plano'),
+  priceId: Yup.number().required('Por favor selecione uma horigem e destino'),
+});
+
+interface PriceProps {
+  id: number;
+  price: number;
+  createdAt: string;
+  updatedAt: string;
+  source: {
+    id: number;
+    code: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  destination: {
+    id: number;
+    code: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+}
+
+interface PlanProps {
+  id: number;
+  name: string;
+  minutes: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface CalcProps {
+  result: {
+    priceWithPlan: number;
+    priceWithoutPlan: number;
+  };
+  planName: string;
+}
 
 const Home: React.FC = () => {
   const sectionRef = useRef(null);
+  const [prices, setPrices] = useState<PriceProps[]>();
+  const [plans, setPlans] = useState<PlanProps[]>();
+  const [calcValue, setValcValue] = useState<CalcProps>();
 
   const intersection = useIntersection(sectionRef, {
     root: null,
@@ -50,6 +106,60 @@ const Home: React.FC = () => {
     ? fadeOut('.fadeIn')
     : fadeIn('.fadeIn');
 
+  async function handleFormikSubmit(
+    values: {
+      minutes: string;
+      priceId: string;
+      planId: string;
+    },
+    formikHelpers: FormikHelpers<{
+      minutes: string;
+      priceId: string;
+      planId: string;
+    }>
+  ) {
+    try {
+      const { data } = await api.post('/calculate-price', {
+        minutes: values.minutes,
+        priceId: values.priceId,
+        planId: values.planId,
+      });
+
+      if (data) {
+        setValcValue(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function loadPrices() {
+    try {
+      const { data } = await api.get('/price');
+      if (data) {
+        setPrices(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function loadPlans() {
+    try {
+      const { data } = await api.get('/plan');
+      if (data) {
+        setPlans(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    loadPrices();
+    loadPlans();
+  }, []);
+
   return (
     <Container>
       <Parallax bgImage={Image1} strength={500}>
@@ -69,17 +179,17 @@ const Home: React.FC = () => {
         <Title>Nossos melhores planos</Title>
 
         <Plans>
-          <Card className="fadeIn">
+          <Card className="fadeIn" bgUrl={phone}>
             <CardTitle>Fale Mais 30</CardTitle>
 
             <CardBody>Fale até 30 minutos sem pagar nada</CardBody>
           </Card>
-          <Card className="fadeIn">
+          <Card className="fadeIn" bgUrl={phone}>
             <CardTitle>Fale Mais 60</CardTitle>
 
             <CardBody>Fale até 60 minutos sem pagar nada</CardBody>
           </Card>
-          <Card className="fadeIn">
+          <Card className="fadeIn" bgUrl={phone}>
             <CardTitle>Fale Mais 120</CardTitle>
 
             <CardBody>Fale até 120 minutos sem pagar nada</CardBody>
@@ -88,7 +198,123 @@ const Home: React.FC = () => {
       </SectionTwo>
       <Parallax bgImage={Image1} strength={500}>
         <SectionThree>
-          <Title>Compare os Planos</Title>
+          <Title style={{ gridArea: 'title' }}>Compare os Planos</Title>
+          <Formik
+            initialValues={{ minutes: '', priceId: '', planId: '' }}
+            validationSchema={validate}
+            onSubmit={handleFormikSubmit}
+          >
+            {({
+              errors,
+              touched,
+              handleChange,
+              values,
+              handleSubmit,
+              isSubmitting,
+            }) => (
+              <Form onSubmit={handleSubmit}>
+                <Label>
+                  <InputTitle htmlFor="priceId">
+                    Selecione a origem e destino
+                  </InputTitle>
+
+                  <Select
+                    name="priceId"
+                    id="priceId"
+                    onChange={handleChange}
+                    value={values.priceId}
+                    error={errors.priceId}
+                  >
+                    {prices &&
+                      prices.map((price) => (
+                        <option value={price.id} key={price.id}>
+                          {`Origem: ${price.source.code}  // Destino: ${price.destination.code}`}
+                        </option>
+                      ))}
+                  </Select>
+                  {errors.priceId && (
+                    <Text error={errors.priceId}>{errors.priceId}</Text>
+                  )}
+                </Label>
+                <Label>
+                  <InputTitle htmlFor="planId"> Selecione um plano</InputTitle>
+
+                  <Select
+                    name="planId"
+                    id="planId"
+                    onChange={handleChange}
+                    value={values.planId}
+                    error={errors.planId}
+                  >
+                    {plans &&
+                      plans.map((plan) => (
+                        <option value={plan.id} key={plan.id}>
+                          {plan.name}
+                        </option>
+                      ))}
+                  </Select>
+                  {errors.planId && (
+                    <Text error={errors.planId}>{errors.planId}</Text>
+                  )}
+                </Label>
+                <Label>
+                  <InputTitle htmlFor="minutes">
+                    Quantidade de minutos
+                  </InputTitle>
+                  <Input
+                    type="number"
+                    id="minutes"
+                    min="1"
+                    max="1000"
+                    name="minutes"
+                    onChange={handleChange}
+                    value={values.minutes}
+                    error={errors.minutes}
+                  />
+                  {errors.minutes && (
+                    <Text error={errors.minutes}>{errors.minutes}</Text>
+                  )}
+                </Label>
+                <ButtonSubmit>Comparar</ButtonSubmit>
+              </Form>
+            )}
+          </Formik>
+          {calcValue && (
+            <>
+              <Card
+                color="var(--white)"
+                bgColor="var(--primary)"
+                gridArea="r1"
+                bgUrl={phone2}
+              >
+                <CardTitle>
+                  Valor da ligação com o plano
+                  {`${calcValue.planName}`}
+                </CardTitle>
+
+                <CardBody>
+                  R$
+                  {`${calcValue.result.priceWithPlan}`}
+                </CardBody>
+              </Card>
+              <Card
+                color="var(--white)"
+                bgColor="var(--primary)"
+                gridArea="r2"
+                bgUrl={phone2}
+              >
+                <CardTitle>
+                  Valor da ligação sem o plano
+                  {`${calcValue.planName}`}
+                </CardTitle>
+
+                <CardBody>
+                  R$
+                  {`${calcValue.result.priceWithoutPlan}`}
+                </CardBody>
+              </Card>
+            </>
+          )}
         </SectionThree>
       </Parallax>
     </Container>

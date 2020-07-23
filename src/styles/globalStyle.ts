@@ -81,6 +81,8 @@ button {
     --quaternary: #68FCF1;
     --quinary: #45A29E;
     --white: #fff;
+    --red: #f84a4b;
+
 
   }
 `;
