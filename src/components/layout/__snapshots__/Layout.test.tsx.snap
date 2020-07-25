@@ -349,7 +349,7 @@ exports[`<Layout /> redering Should render without errors 1`] = `
 .c9 {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--quaternary);
+  background-color: var(--quinary);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 1fr;
@@ -611,10 +611,12 @@ exports[`<Layout /> redering Should render without errors 1`] = `
 
 @media (max-width:550px) {
   .c1 ul {
-    -webkit-box-pack: space-around;
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: space-around;
-    justify-content: space-around;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   .c1 ul li {
@@ -729,18 +731,18 @@ exports[`<Layout /> redering Should render without errors 1`] = `
       </li>
       <li>
         <a
-          href="/about"
+          href="/contact"
           onClick={[Function]}
         >
-          About
+           Contato
         </a>
       </li>
       <li>
         <a
-          href="/contact"
+          href="/about"
           onClick={[Function]}
         >
-           Contact
+          Sobre nós
         </a>
       </li>
     </ul>

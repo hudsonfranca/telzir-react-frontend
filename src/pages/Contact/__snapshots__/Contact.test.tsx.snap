@@ -1,0 +1,353 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> redering Should render without errors 1`] = `
+.c0 {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.c1 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: var(--white);
+}
+
+.c1 h1 {
+  font-size: 4rem;
+  padding-bottom: 20px;
+  width: 80%;
+  text-align: center;
+}
+
+.c1 p {
+  font-size: 2rem;
+  width: 80%;
+  text-align: center;
+}
+
+.c1::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(11,12,16,0.5);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.c2 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--secondary);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-rows: repeat(auto-fit,minmax(250px,1fr));
+  grid-gap: 30px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  width: 100%;
+  height: 100%;
+  background-image: url(sms.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.c3::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient( 100deg, var(--primary), rgba(31,40,51,0.1) );
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.c6 {
+  width: 100%;
+  height: 100%;
+  background-image: url(call.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.c6::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient( 100deg, var(--primary), rgba(31,40,51,0.1) );
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.c7 {
+  width: 100%;
+  height: 100%;
+  background-image: url(question.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.c7::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient( 100deg, var(--primary), rgba(31,40,51,0.1) );
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.c8 {
+  width: 100%;
+  height: 100%;
+  background-image: url(suport2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.c8::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient( 100deg, var(--primary), rgba(31,40,51,0.1) );
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.c4 {
+  font-size: 3rem;
+  padding: 20px;
+}
+
+.c5 {
+  font-size: 2rem;
+  padding: 20px;
+}
+
+<div
+  className="c0"
+  data-test="contactContainer"
+>
+  <div
+    className="react-parallax "
+    style={
+      Object {
+        "overflow": "hidden",
+        "position": "relative",
+      }
+    }
+  >
+    <img
+      alt=""
+      className="react-parallax-bgimage"
+      src="contact.jpg"
+      style={
+        Object {
+          "MozBackfaceVisibility": "hidden",
+          "MsBackfaceVisibility": "hidden",
+          "WebkitBackfaceVisibility": "hidden",
+          "WebkitTransform": "translate3d(-50%, 0, 0)",
+          "WebkitTransformStyle": "preserve-3d",
+          "left": "50%",
+          "position": "absolute",
+          "transform": "translate3d(-50%, 0, 0)",
+        }
+      }
+    />
+    <div
+      className="react-parallax-content"
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
+      <section
+        className="c1"
+        data-test="contactSectionOne"
+      >
+        <h1>
+          Fale com a Telzir e tire suas dúvidas
+        </h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi exercitationem provident facilis nulla nam vero quod est magnam dolorum itaque ipsum, eligendi quam labore optio explicabo? Ad molestiae laboriosam quam?
+        </p>
+      </section>
+    </div>
+  </div>
+  <section
+    className="c2"
+    data-test="contactSectionTwo"
+  >
+    <div
+      className="c3"
+      data-test="contactCard"
+    >
+      <p
+        className="c4"
+      >
+        SMS
+      </p>
+      <p
+        className="c5"
+      >
+        Seja atendido via SMS
+      </p>
+    </div>
+    <div
+      className="c6"
+      data-test="contactCard"
+    >
+      <p
+        className="c4"
+      >
+        TELEFONE
+      </p>
+      <p
+        className="c5"
+      >
+        Ligue grátis para a Telzir
+      </p>
+    </div>
+    <div
+      className="c7"
+      data-test="contactCard"
+    >
+      <p
+        className="c4"
+      >
+        OUVIDORIA
+      </p>
+      <p
+        className="c5"
+      >
+        Sugestões, crícas e reclamações
+      </p>
+    </div>
+    <div
+      className="c8"
+      data-test="contactCard"
+    >
+      <p
+        className="c4"
+      >
+        ENVIE SUA DÚVIDA
+      </p>
+      <p
+        className="c5"
+      >
+        Informe o plano e o que precisa
+      </p>
+    </div>
+  </section>
+</div>
+`;

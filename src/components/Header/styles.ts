@@ -50,7 +50,9 @@ export const Container = styled.header`
       }
     }
     @media (max-width: 550px) {
-      justify-content: space-around;
+      justify-content: space-between;
+      padding-left: 5px;
+      padding-right: 5px;
 
       li {
         display: none;

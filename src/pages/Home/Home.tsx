@@ -179,7 +179,7 @@ const Home: React.FC = () => {
       </Parallax>
 
       <PlansSection
-        bgColor="var(--quaternary)"
+        bgColor="var(--quinary)"
         ref={sectionRef}
         data-test="homeSectionTwo"
       >

@@ -196,7 +196,7 @@ exports[`<Home /> redering Should render without errors 1`] = `
 .c2 {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--quaternary);
+  background-color: var(--quinary);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 1fr;
