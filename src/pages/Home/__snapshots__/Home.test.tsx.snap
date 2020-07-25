@@ -1,0 +1,572 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> redering Should render without errors 1`] = `
+.c0 {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.c1 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: var(--white);
+}
+
+.c1 h1 {
+  font-size: 4rem;
+  padding-bottom: 20px;
+  width: 80%;
+  text-align: center;
+}
+
+.c1 p {
+  font-size: 2rem;
+  width: 80%;
+  text-align: center;
+}
+
+.c1::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(11,12,16,0.5);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.c4 {
+  width: 100%;
+  grid-area: r1;
+  height: 90%;
+  background-image: url(phone.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.c4::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(11,12,16,0.7);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.c7 {
+  width: 100%;
+  grid-area: r2;
+  height: 90%;
+  background-image: url(phone.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.c7::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(11,12,16,0.7);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.c8 {
+  width: 100%;
+  grid-area: r3;
+  height: 90%;
+  background-image: url(phone.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.c8::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(11,12,16,0.7);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.c3 {
+  color: var(--white);
+  font-size: 4rem;
+  height: 100%;
+  width: 100%;
+  grid-area: title;
+  text-align: center;
+  padding: 50px;
+}
+
+.c5 {
+  font-size: 3rem;
+  height: 100%;
+  margin-bottom: 10%;
+  text-align: center;
+}
+
+.c6 {
+  font-size: 2rem;
+  height: 100%;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.c2 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--quaternary);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 'title title title' 'r1 r2 r3';
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 30px;
+  gap: 20px;
+}
+
+.c9 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--secondary);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 'title title title' 'r1 r2 r3';
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 30px;
+  gap: 20px;
+}
+
+.c10 {
+  grid-area: r1;
+  width: 100%;
+  height: 90%;
+  background-color: var(--primary);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.c10 strong a {
+  color: var(--primary);
+}
+
+.c10 strong a:hover,
+.c10 strong a:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: #777;
+  font-size: 0.8em;
+  margin: 0.5em 0;
+  position: relative;
+  width: 80%;
+  height: 75px;
+}
+
+.c14 {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 1.6rem;
+  background-color: var(--white);
+  padding-left: 5px;
+}
+
+.c14:focus {
+  outline: none !important;
+  border: none;
+  box-shadow: 0 0 9px var(--hover1);
+}
+
+.c13 {
+  width: 100%;
+  height: 40px;
+  border: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 1.6rem;
+  background-color: var(--white);
+  padding-left: 5px;
+}
+
+.c13:focus {
+  outline: none !important;
+  border: none;
+  box-shadow: 0 0 9px var(--quaternary);
+}
+
+.c12 {
+  color: var(--white);
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.c15 {
+  border-radius: 10px;
+  width: 80%;
+  height: 40px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  color: var(--primary);
+  font-size: 1.8rem;
+  background-color: var(--quaternary);
+}
+
+@media (max-width:767px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width:767px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+<div
+  className="c0"
+  data-test="homeContainer"
+>
+  <div
+    className="react-parallax "
+    style={
+      Object {
+        "overflow": "hidden",
+        "position": "relative",
+      }
+    }
+  >
+    <img
+      alt=""
+      className="react-parallax-bgimage"
+      src="home.jpg"
+      style={
+        Object {
+          "MozBackfaceVisibility": "hidden",
+          "MsBackfaceVisibility": "hidden",
+          "WebkitBackfaceVisibility": "hidden",
+          "WebkitTransform": "translate3d(-50%, 0, 0)",
+          "WebkitTransformStyle": "preserve-3d",
+          "left": "50%",
+          "position": "absolute",
+          "transform": "translate3d(-50%, 0, 0)",
+        }
+      }
+    />
+    <div
+      className="react-parallax-content"
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
+      <section
+        className="c1"
+        data-test="homeSectionOne"
+      >
+        <h1>
+           Cofira os produtos e serviços da Telzir.
+        </h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi exercitationem provident facilis nulla nam vero quod est magnam dolorum itaque ipsum, eligendi quam labore optio explicabo? Ad molestiae laboriosam quam?
+        </p>
+      </section>
+    </div>
+  </div>
+  <section
+    className="c2"
+    data-test="homeSectionTwo"
+  >
+    <p
+      className="c3"
+      data-test="homeSectionTwoTitle"
+    >
+      Nossos melhores planos
+    </p>
+    <div
+      className="c4 fadeIn"
+      data-test="homeSectionTwoCard"
+    >
+      <p
+        className="c5"
+      >
+        Fale Mais 30
+      </p>
+      <p
+        className="c6"
+      >
+        Fale até 30 minutos sem pagar nada
+      </p>
+    </div>
+    <div
+      className="c7 fadeIn"
+      data-test="homeSectionTwoCard"
+    >
+      <p
+        className="c5"
+      >
+        Fale Mais 60
+      </p>
+      <p
+        className="c6"
+      >
+        Fale até 60 minutos sem pagar nada
+      </p>
+    </div>
+    <div
+      className="c8 fadeIn"
+      data-test="homeSectionTwoCard"
+    >
+      <p
+        className="c5"
+      >
+        Fale Mais 120
+      </p>
+      <p
+        className="c6"
+      >
+        Fale até 120 minutos sem pagar nada
+      </p>
+    </div>
+  </section>
+  <section
+    className="c9"
+    data-test="homeSectionThree"
+  >
+    <p
+      className="c3"
+    >
+      Compare os nosos Planos
+    </p>
+    <form
+      className="c10"
+      data-test="homeSectionThreeForm"
+      onSubmit={[Function]}
+    >
+      <label
+        className="c11"
+      >
+        <label
+          className="c12"
+          htmlFor="priceId"
+        >
+          Selecione a origem e destino
+        </label>
+        <select
+          className="c13"
+          id="priceId"
+          name="priceId"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value=""
+          >
+            Origem e Destino
+          </option>
+        </select>
+      </label>
+      <label
+        className="c11"
+      >
+        <label
+          className="c12"
+          htmlFor="planId"
+        >
+           Selecione um plano
+        </label>
+        <select
+          className="c13"
+          id="planId"
+          name="planId"
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value=""
+          >
+            Plano
+          </option>
+        </select>
+      </label>
+      <label
+        className="c11"
+      >
+        <label
+          className="c12"
+          htmlFor="minutes"
+        >
+          Quantidade de minutos
+        </label>
+        <input
+          className="c14"
+          id="minutes"
+          max="1000"
+          min="1"
+          name="minutes"
+          onChange={[Function]}
+          type="number"
+          value=""
+        />
+      </label>
+      <button
+        className="c15"
+      >
+        Comparar
+      </button>
+    </form>
+  </section>
+</div>
+`;

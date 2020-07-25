@@ -12,13 +12,17 @@
     "@types/react-dom": "^16.9.0",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "formik": "^2.1.5",
     "gsap": "^3.4.2",
+    "jest-styled-components": "^7.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-parallax": "^3.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-test-renderer": "^16.13.1",
     "react-use": "^15.3.2",
     "styled-components": "^5.1.1",
     "typescript": "~3.7.2",
@@ -47,11 +51,16 @@
     ]
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/react-router-dom": "^5.1.5",
+    "@types/react-test-renderer": "^16.9.2",
     "@types/styled-components": "^5.1.1",
     "@types/yup": "^0.29.3",
     "@typescript-eslint/eslint-plugin": "^3.7.0",
     "@typescript-eslint/parser": "^3.7.0",
+    "babel-preset-env": "^1.7.0",
+    "enzyme-to-json": "^3.5.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
@@ -60,5 +69,10 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
     "prettier": "^2.0.5"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

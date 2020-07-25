@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> redering Should render without errors 1`] = `
+.c0 {
+  grid-area: main;
+  position: relative;
+}
+
+<main
+  className="c0"
+  data-test="mainContainer"
+/>
+`;

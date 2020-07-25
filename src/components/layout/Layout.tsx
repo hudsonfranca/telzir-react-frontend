@@ -5,16 +5,21 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Routes from '../../Routes';
 import Footer from '../Footer/Footer';
+import SideDrawerProvider from '../context/SideDrawerContext';
+import SideDrawer from '../SideDrawer/SideDrawer';
 
 const Layout: React.FC = () => {
   return (
     <BrowserRouter>
-      <Grid>
-        <Header />
-        <Main>
-          <Routes />
+      <Grid data-test="layoutGrid">
+        <SideDrawerProvider data-test="sidedrawerProvider">
+          <Header data-test="header" />
+          <SideDrawer data-test="sideDrawer" />
+        </SideDrawerProvider>
+        <Main data-test="main">
+          <Routes data-test="routes" />
         </Main>
-        <Footer />
+        <Footer data-test="footer" />
       </Grid>
     </BrowserRouter>
   );

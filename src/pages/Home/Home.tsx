@@ -7,15 +7,13 @@ import { Parallax } from 'react-parallax';
 import { Formik, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import {
-  Container,
   SectionOne,
-  SectionTwo,
+  Container,
+  PlansSection,
   Card,
   Title,
-  Plans,
   CardTitle,
   CardBody,
-  SectionThree,
   Label,
   Form,
   Input,
@@ -23,7 +21,6 @@ import {
   Select,
   InputTitle,
   ButtonSubmit,
-  MoneyText,
 } from './styles';
 import Image1 from '../../assets/home.jpg';
 import phone from '../../assets/phone.jpg';
@@ -102,9 +99,11 @@ const Home: React.FC = () => {
     });
   };
 
+  /*eslint-disable */
   intersection && intersection.intersectionRatio < 0.5
     ? fadeOut('.fadeIn')
     : fadeIn('.fadeIn');
+    /* eslint-enable */
 
   async function handleFormikSubmit(
     values: {
@@ -161,9 +160,13 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <Container>
-      <Parallax bgImage={Image1} strength={500}>
-        <SectionOne>
+    <Container data-test="homeContainer">
+      <Parallax
+        bgImage={Image1}
+        strength={500}
+        bgClassName="react-parallax-bgimage"
+      >
+        <SectionOne data-test="homeSectionOne">
           <h1> Cofira os produtos e serviços da Telzir.</h1>
 
           <p>
@@ -175,148 +178,168 @@ const Home: React.FC = () => {
         </SectionOne>
       </Parallax>
 
-      <SectionTwo ref={sectionRef}>
-        <Title>Nossos melhores planos</Title>
+      <PlansSection
+        bgColor="var(--quaternary)"
+        ref={sectionRef}
+        data-test="homeSectionTwo"
+      >
+        <Title gridArea="title" data-test="homeSectionTwoTitle">
+          Nossos melhores planos
+        </Title>
 
-        <Plans>
-          <Card className="fadeIn" bgUrl={phone}>
-            <CardTitle>Fale Mais 30</CardTitle>
+        <Card
+          className="fadeIn"
+          bgUrl={phone}
+          gridArea="r1"
+          data-test="homeSectionTwoCard"
+        >
+          <CardTitle>Fale Mais 30</CardTitle>
 
-            <CardBody>Fale até 30 minutos sem pagar nada</CardBody>
-          </Card>
-          <Card className="fadeIn" bgUrl={phone}>
-            <CardTitle>Fale Mais 60</CardTitle>
+          <CardBody>Fale até 30 minutos sem pagar nada</CardBody>
+        </Card>
+        <Card
+          className="fadeIn"
+          bgUrl={phone}
+          gridArea="r2"
+          data-test="homeSectionTwoCard"
+        >
+          <CardTitle>Fale Mais 60</CardTitle>
 
-            <CardBody>Fale até 60 minutos sem pagar nada</CardBody>
-          </Card>
-          <Card className="fadeIn" bgUrl={phone}>
-            <CardTitle>Fale Mais 120</CardTitle>
+          <CardBody>Fale até 60 minutos sem pagar nada</CardBody>
+        </Card>
+        <Card
+          className="fadeIn"
+          bgUrl={phone}
+          gridArea="r3"
+          data-test="homeSectionTwoCard"
+        >
+          <CardTitle>Fale Mais 120</CardTitle>
 
-            <CardBody>Fale até 120 minutos sem pagar nada</CardBody>
-          </Card>
-        </Plans>
-      </SectionTwo>
-      <Parallax bgImage={Image1} strength={500}>
-        <SectionThree>
-          <Title style={{ gridArea: 'title' }}>Compare os Planos</Title>
-          <Formik
-            initialValues={{ minutes: '', priceId: '', planId: '' }}
-            validationSchema={validate}
-            onSubmit={handleFormikSubmit}
-          >
-            {({
-              errors,
-              touched,
-              handleChange,
-              values,
-              handleSubmit,
-              isSubmitting,
-            }) => (
-              <Form onSubmit={handleSubmit}>
-                <Label>
-                  <InputTitle htmlFor="priceId">
-                    Selecione a origem e destino
-                  </InputTitle>
+          <CardBody>Fale até 120 minutos sem pagar nada</CardBody>
+        </Card>
+      </PlansSection>
 
-                  <Select
-                    name="priceId"
-                    id="priceId"
-                    onChange={handleChange}
-                    value={values.priceId}
-                    error={errors.priceId}
-                  >
-                    {prices &&
-                      prices.map((price) => (
-                        <option value={price.id} key={price.id}>
-                          {`Origem: ${price.source.code}  // Destino: ${price.destination.code}`}
-                        </option>
-                      ))}
-                  </Select>
-                  {errors.priceId && (
-                    <Text error={errors.priceId}>{errors.priceId}</Text>
-                  )}
-                </Label>
-                <Label>
-                  <InputTitle htmlFor="planId"> Selecione um plano</InputTitle>
+      <PlansSection bgColor="var(--secondary)" data-test="homeSectionThree">
+        <Title gridArea="title">Compare os nosos Planos</Title>
+        <Formik
+          initialValues={{ minutes: '', priceId: '', planId: '' }}
+          validationSchema={validate}
+          onSubmit={handleFormikSubmit}
+        >
+          {({
+            errors,
+            touched,
+            handleChange,
+            values,
+            handleSubmit,
+            isSubmitting,
+          }) => (
+            <Form onSubmit={handleSubmit} data-test="homeSectionThreeForm">
+              <Label>
+                <InputTitle htmlFor="priceId">
+                  Selecione a origem e destino
+                </InputTitle>
 
-                  <Select
-                    name="planId"
-                    id="planId"
-                    onChange={handleChange}
-                    value={values.planId}
-                    error={errors.planId}
-                  >
-                    {plans &&
-                      plans.map((plan) => (
-                        <option value={plan.id} key={plan.id}>
-                          {plan.name}
-                        </option>
-                      ))}
-                  </Select>
-                  {errors.planId && (
-                    <Text error={errors.planId}>{errors.planId}</Text>
-                  )}
-                </Label>
-                <Label>
-                  <InputTitle htmlFor="minutes">
-                    Quantidade de minutos
-                  </InputTitle>
-                  <Input
-                    type="number"
-                    id="minutes"
-                    min="1"
-                    max="1000"
-                    name="minutes"
-                    onChange={handleChange}
-                    value={values.minutes}
-                    error={errors.minutes}
-                  />
-                  {errors.minutes && (
-                    <Text error={errors.minutes}>{errors.minutes}</Text>
-                  )}
-                </Label>
-                <ButtonSubmit>Comparar</ButtonSubmit>
-              </Form>
-            )}
-          </Formik>
-          {calcValue && (
-            <>
-              <Card
-                color="var(--white)"
-                bgColor="var(--primary)"
-                gridArea="r1"
-                bgUrl={phone2}
-              >
-                <CardTitle>
-                  Valor da ligação com o plano
-                  {`${calcValue.planName}`}
-                </CardTitle>
+                <Select
+                  name="priceId"
+                  id="priceId"
+                  onChange={handleChange}
+                  value={values.priceId}
+                  error={errors.priceId}
+                >
+                  <option value="">Origem e Destino</option>
+                  {prices &&
+                    prices.map((price) => (
+                      <option value={price.id} key={price.id}>
+                        {`Origem: ${price.source.code}  // Destino: ${price.destination.code}`}
+                      </option>
+                    ))}
+                </Select>
+                {errors.priceId && (
+                  <Text error={errors.priceId}>{errors.priceId}</Text>
+                )}
+              </Label>
+              <Label>
+                <InputTitle htmlFor="planId"> Selecione um plano</InputTitle>
 
-                <CardBody>
-                  R$
-                  {`${calcValue.result.priceWithPlan}`}
-                </CardBody>
-              </Card>
-              <Card
-                color="var(--white)"
-                bgColor="var(--primary)"
-                gridArea="r2"
-                bgUrl={phone2}
-              >
-                <CardTitle>
-                  Valor da ligação sem o plano
-                  {`${calcValue.planName}`}
-                </CardTitle>
-
-                <CardBody>
-                  R$
-                  {`${calcValue.result.priceWithoutPlan}`}
-                </CardBody>
-              </Card>
-            </>
+                <Select
+                  name="planId"
+                  id="planId"
+                  onChange={handleChange}
+                  value={values.planId}
+                  error={errors.planId}
+                >
+                  <option value="">Plano</option>
+                  {plans &&
+                    plans.map((plan) => (
+                      <option value={plan.id} key={plan.id}>
+                        {plan.name}
+                      </option>
+                    ))}
+                </Select>
+                {errors.planId && (
+                  <Text error={errors.planId}>{errors.planId}</Text>
+                )}
+              </Label>
+              <Label>
+                <InputTitle htmlFor="minutes">Quantidade de minutos</InputTitle>
+                <Input
+                  type="number"
+                  id="minutes"
+                  min="1"
+                  max="1000"
+                  name="minutes"
+                  onChange={handleChange}
+                  value={values.minutes}
+                  error={errors.minutes}
+                />
+                {errors.minutes && (
+                  <Text error={errors.minutes}>{errors.minutes}</Text>
+                )}
+              </Label>
+              <ButtonSubmit>Comparar</ButtonSubmit>
+            </Form>
           )}
-        </SectionThree>
-      </Parallax>
+        </Formik>
+        {calcValue && (
+          <>
+            <Card
+              color="var(--white)"
+              bgColor="var(--primary)"
+              gridArea="r2"
+              bgUrl={phone2}
+              data-test="homeSectionThreeCard"
+            >
+              <CardTitle>
+                Com o plano
+                {`${calcValue.planName}`}
+              </CardTitle>
+
+              <CardBody>
+                R$
+                {`${calcValue.result.priceWithPlan}`}
+              </CardBody>
+            </Card>
+            <Card
+              color="var(--white)"
+              bgColor="var(--primary)"
+              gridArea="r3"
+              bgUrl={phone2}
+              data-test="homeSectionThreeCard"
+            >
+              <CardTitle>
+                Sem o plano
+                {`${calcValue.planName}`}
+              </CardTitle>
+
+              <CardBody>
+                R$
+                {`${calcValue.result.priceWithoutPlan}`}
+              </CardBody>
+            </Card>
+          </>
+        )}
+      </PlansSection>
     </Container>
   );
 };

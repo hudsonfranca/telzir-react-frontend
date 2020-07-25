@@ -11,6 +11,10 @@ interface CardProps {
   bgUrl: string;
 }
 
+interface TitleProps {
+  gridArea?: string;
+}
+
 interface TextProps {
   error: string | undefined;
 }
@@ -34,11 +38,14 @@ export const SectionOne = styled.section`
   h1 {
     font-size: 4rem;
     padding-bottom: 20px;
+    width: 80%;
+    text-align: center;
   }
 
   p {
     font-size: 2rem;
-    width: 50%;
+    width: 80%;
+    text-align: center;
   }
   &::after {
     content: '';
@@ -52,22 +59,10 @@ export const SectionOne = styled.section`
   }
 `;
 
-export const SectionTwo = styled.section`
-  width: 100%;
-  height: 100vh;
-  background-color: var(--quinary);
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px;
-`;
-
 export const Card = styled.div<CardProps>`
   width: 100%;
   grid-area: ${({ gridArea }) => gridArea || ''};
-  height: 80%;
+  height: 90%;
   background-image: url(${({ bgUrl }) => bgUrl});
   background-position: center;
   background-repeat: no-repeat;
@@ -93,63 +88,63 @@ export const Card = styled.div<CardProps>`
   }
 `;
 
-export const Title = styled.p`
+export const Title = styled.p<TitleProps>`
   color: var(--white);
   font-size: 4rem;
-  height: 50px;
-  margin-bottom: 30px;
-`;
-
-export const Plans = styled.div`
-  width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 20px;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
+  grid-area: ${({ gridArea }) => gridArea || ''};
+  text-align: center;
+  padding: 50px;
 `;
 
 export const CardTitle = styled.p`
-  font-size: 4rem;
-  height: 50px;
-  margin-bottom: 30px;
-  line-height: 6rem;
+  font-size: 3rem;
+  height: 100%;
+  margin-bottom: 10%;
+  text-align: center;
 `;
 
 export const CardBody = styled.p`
-  font-size: 3rem;
-  height: 50px;
+  font-size: 2rem;
+  height: 100%;
   margin-bottom: 30px;
+  text-align: center;
 `;
 
-export const SectionThree = styled.section`
+export const PlansSection = styled.section<{ bgColor: string }>`
   width: 100%;
-  height: 100vh;
-  background-color: var(--secondary);
+  min-height: 100vh;
+  background-color: ${({ bgColor }) => bgColor || 'var(--primary)'};
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'title title title'
-    'form r1 r2';
+    'r1 r2 r3';
   justify-content: space-between;
   align-items: center;
   padding: 30px;
   gap: 20px;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 export const Form = styled.form`
-  grid-area: form;
+  grid-area: r1;
   width: 100%;
-  height: 80%;
+  height: 90%;
   background-color: var(--primary);
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding: 10px;
 
   strong a {
     color: var(--primary);
@@ -193,7 +188,6 @@ export const Input = styled.input<InputProps>`
 export const Select = styled.select<InputProps>`
   width: 100%;
   height: 40px;
-  /* border-radius: 5px; */
   border: ${({ error }) => (error ? '1px solid var(--red)' : 'none')};
   transition: 0.4s;
   font-size: 1.6rem;
@@ -230,9 +224,4 @@ export const ButtonSubmit = styled.button`
   color: var(--primary);
   font-size: 1.8rem;
   background-color: var(--quaternary);
-`;
-
-export const MoneyText = styled.p`
-  color: var(--white);
-  font-size: 2rem;
 `;

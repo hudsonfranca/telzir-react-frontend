@@ -5,7 +5,7 @@ const Grid = styled.div`
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 200px;
+  grid-template-rows: auto auto 170px;
   grid-template-areas:
     'header'
     'main'

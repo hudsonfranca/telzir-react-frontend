@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> redering Should render without errors 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  grid-area: header;
+  width: 100%;
+  height: 60px;
+  background: rgba(11,12,16,0.5);
+  position: fixed;
+  z-index: 20;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.c0 ul {
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.c0 ul img {
+  cursor: pointer;
+}
+
+.c0 ul li {
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 ul li a {
+  color: var(--white);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.c0 ul li a:hover,
+.c0 ul li a:active {
+  color: var(--quaternary);
+}
+
+.c3 {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c3 div {
+  width: 100%;
+  height: 3px;
+  background-color: var(--white);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  -webkit-transform-origin: 1px;
+  -ms-transform-origin: 1px;
+  transform-origin: 1px;
+  border-radius: 10px;
+}
+
+.c3 div:first-child {
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+}
+
+.c3 div:nth-child(2) {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.c3 div:nth-child(3) {
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+}
+
+@media (max-width:550px) {
+  .c0 ul {
+    -webkit-box-pack: space-around;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: space-around;
+    justify-content: space-around;
+  }
+
+  .c0 ul li {
+    display: none;
+  }
+}
+
+@media (min-width:550px) {
+  .c0 ul .c1 {
+    display: none;
+  }
+}
+
+<header
+  className="c0"
+  data-test="headerContainer"
+>
+  <ul
+    data-test="headerList"
+  >
+    <div
+      className="c1 c2"
+      data-test="headerHbContainer"
+    >
+      <div
+        className="c3"
+        data-test="hamburguerButtonContainer"
+        onClick={[Function]}
+      >
+        <div
+          data-test="hamburguerLine"
+        />
+        <div
+          data-test="hamburguerLine"
+        />
+        <div
+          data-test="hamburguerLine"
+        />
+      </div>
+    </div>
+    <img
+      alt="Logo"
+      data-test="headerLogo"
+      src="Logo1.0.png"
+    />
+    <li>
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        href="/about"
+        onClick={[Function]}
+      >
+        About
+      </a>
+    </li>
+    <li>
+      <a
+        href="/contact"
+        onClick={[Function]}
+      >
+         Contact
+      </a>
+    </li>
+  </ul>
+</header>
+`;

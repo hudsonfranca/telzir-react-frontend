@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
+export const HamburguerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+`;
+
 export const Container = styled.header`
   grid-area: header;
   width: 100%;
   height: 60px;
-  background: rgba(11, 12, 16, 0.3);
+  background: rgba(11, 12, 16, 0.5);
   position: fixed;
   z-index: 20;
   padding-left: 20px;
@@ -40,6 +47,19 @@ export const Container = styled.header`
         :active {
           color: var(--quaternary);
         }
+      }
+    }
+    @media (max-width: 550px) {
+      justify-content: space-around;
+
+      li {
+        display: none;
+      }
+    }
+
+    @media (min-width: 550px) {
+      ${HamburguerContainer} {
+        display: none;
       }
     }
   }
