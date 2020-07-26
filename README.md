@@ -1,10 +1,12 @@
 <p>
   <img src="images/homeGif.gif">
-  <br>
+  <br><br>
+
   <img src="images/contatoGif.gif" >
-  <br>
+  <br><br>
+
   <img src="images/aboutGif.gif" >
-  <br>
+  <br><br>
 
 </p>
 
