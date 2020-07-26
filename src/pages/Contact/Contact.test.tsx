@@ -12,9 +12,9 @@ beforeEach(() => {
 
 describe('<Home /> redering', () => {
   it('Should render without errors', () => {
-    const home = renderer.create(<Contact />).toJSON();
+    const contact = renderer.create(<Contact />).toJSON();
 
-    expect(home).toMatchSnapshot();
+    expect(contact).toMatchSnapshot();
   });
 
   it('Should render 1 contactContainer', () => {

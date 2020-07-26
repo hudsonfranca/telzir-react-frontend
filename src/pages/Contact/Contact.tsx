@@ -16,6 +16,7 @@ import sms from '../../assets/sms.jpg';
 import suport from '../../assets/suport2.jpg';
 
 const Contact: React.FC = () => {
+  document.title = 'Contato';
   return (
     <Container data-test="contactContainer">
       <Parallax
@@ -36,8 +37,8 @@ const Contact: React.FC = () => {
       </Parallax>
       <SectionTwo data-test="contactSectionTwo">
         <Card bgUrl={sms} data-test="contactCard">
-          <CardTitle>SMS</CardTitle>
-          <CardBody>Seja atendido via SMS</CardBody>
+          <CardTitle>WHATSAPP</CardTitle>
+          <CardBody>Seja atendido via WhatsApp</CardBody>
         </Card>
         <Card bgUrl={call} data-test="contactCard">
           <CardTitle>TELEFONE</CardTitle>
@@ -45,7 +46,7 @@ const Contact: React.FC = () => {
         </Card>
         <Card bgUrl={question} data-test="contactCard">
           <CardTitle>OUVIDORIA</CardTitle>
-          <CardBody>Sugestões, crícas e reclamações</CardBody>
+          <CardBody>Sugestões, críticas e reclamações</CardBody>
         </Card>
         <Card bgUrl={suport} data-test="contactCard">
           <CardTitle>ENVIE SUA DÚVIDA</CardTitle>

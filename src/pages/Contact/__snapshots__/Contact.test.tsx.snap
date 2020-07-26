@@ -295,12 +295,12 @@ exports[`<Home /> redering Should render without errors 1`] = `
       <p
         className="c4"
       >
-        SMS
+        WHATSAPP
       </p>
       <p
         className="c5"
       >
-        Seja atendido via SMS
+        Seja atendido via WhatsApp
       </p>
     </div>
     <div
@@ -330,7 +330,7 @@ exports[`<Home /> redering Should render without errors 1`] = `
       <p
         className="c5"
       >
-        Sugestões, crícas e reclamações
+        Sugestões, críticas e reclamações
       </p>
     </div>
     <div

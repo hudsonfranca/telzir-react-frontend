@@ -75,12 +75,17 @@ export const Card = styled.div<CardProps>`
   padding: 20px;
   position: relative;
   z-index: 1;
+  cursor: pointer;
 
   &::after {
     content: '';
     width: 100%;
     height: 100%;
-    background: rgba(11, 12, 16, 0.7);
+    background-image: linear-gradient(
+      100deg,
+      var(--primary),
+      rgba(31, 40, 51, 0.1)
+    );
     position: absolute;
     top: 0;
 

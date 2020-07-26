@@ -25,6 +25,8 @@ import {
 import Image1 from '../../assets/home.jpg';
 import phone from '../../assets/phone.jpg';
 import phone2 from '../../assets/phone2.jpg';
+import family2 from '../../assets/family2.jpg';
+import family3 from '../../assets/family3.jpg';
 import api from '../../services/api';
 
 const validate = Yup.object().shape({
@@ -69,6 +71,8 @@ interface CalcProps {
 }
 
 const Home: React.FC = () => {
+  document.title = 'Home';
+
   const sectionRef = useRef(null);
   const [prices, setPrices] = useState<PriceProps[]>();
   const [plans, setPlans] = useState<PlanProps[]>();
@@ -199,7 +203,7 @@ const Home: React.FC = () => {
         </Card>
         <Card
           className="fadeIn"
-          bgUrl={phone}
+          bgUrl={family2}
           gridArea="r2"
           data-test="homeSectionTwoCard"
         >
@@ -209,7 +213,7 @@ const Home: React.FC = () => {
         </Card>
         <Card
           className="fadeIn"
-          bgUrl={phone}
+          bgUrl={family3}
           gridArea="r3"
           data-test="homeSectionTwoCard"
         >
